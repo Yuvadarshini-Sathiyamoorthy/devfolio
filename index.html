@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuvadarshini's Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22%23000%22 stroke=%22%2300ffff%22 stroke-width=%224%22/><path d=%22M30 35 L70 35 M30 50 L70 50 M30 65 L70 65%22 stroke=%22%2300ffff%22 stroke-width=%223%22 fill=%22none%22/><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22none%22 stroke=%22%2300ffff%22 stroke-width=%222%22 opacity=%220.5%22/></svg>">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-gradient-to-br from-black to-purple-900 min-h-screen relative">
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="cursor">
+        <i class="fas fa-bug"></i>
+    </div>
+    
+    <!-- Scroll Navigation -->
+    <div class="scroll-nav">
+        <button class="scroll-btn" onclick="scrollToTop()" title="Go to Top">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+        <button class="scroll-btn" onclick="scrollToBottom()" title="Go to Bottom">
+            <i class="fas fa-chevron-down"></i>
+        </button>
+    </div>
+    
+    <!-- Starfield Background -->
+    <div class="fixed top-0 left-0 w-full h-full -z-10 opacity-70 pointer-events-none">
+        <canvas id="starfield" class="w-full h-full"></canvas>
+    </div>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center fade-in-section">
+            <div class="w-full flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
+                <div class="flex-1 flex flex-col items-center justify-center text-center order-2 md:order-1">
+                    <div class="flex items-center justify-center gap-4 mb-4">
+                        <h1 class="name-title text-6xl md:text-8xl font-bold leading-tight text-center">
+                            Yuvadarshini S
+                        </h1>
+                    </div>
+                    <p class="text-xl md:text-2xl mt-2 text-white">Budding Ethical Hacker | Developer</p>
+                    <div class="flex flex-wrap items-center justify-center space-x-2 sm:space-x-4 space-y-2 mt-8">
+                        <a href="#education" class="hero-btn hero-btn-2 px-6 py-3 rounded-full border-2 font-semibold uppercase transition-all duration-500 relative overflow-hidden">Education</a>
+                        <a href="#skills" class="hero-btn hero-btn-3 px-6 py-3 rounded-full border-2 font-semibold uppercase transition-all duration-500 relative overflow-hidden">Skills</a>
+                        <a href="#certifications" class="hero-btn hero-btn-4 px-6 py-3 rounded-full border-2 font-semibold uppercase transition-all duration-500 relative overflow-hidden">Certifications</a>
+                        <a href="#internships" class="hero-btn hero-btn-5 px-6 py-3 rounded-full border-2 font-semibold uppercase transition-all duration-500 relative overflow-hidden">Internships</a>
+                        <a href="#projects" class="hero-btn hero-btn-6 px-6 py-3 rounded-full border-2 font-semibold uppercase transition-all duration-500 relative overflow-hidden">Projects</a>
+                        <a href="#articles" class="hero-btn hero-btn-7 px-6 py-3 rounded-full border-2 font-semibold uppercase transition-all duration-500 relative overflow-hidden">Articles</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="min-h-screen py-20 fade-in-section flex flex-col items-center justify-center">
+            <h2 class="text-5xl font-extrabold neon-text-pink-orange mb-12">ABOUT ME</h2>
+            <div class="bg-slate-800/50 p-8 rounded-2xl max-w-2xl w-full border-2 border-cyan-400 floating cert-card hover:scale-105 hover:shadow-lg">
+                <p class="text-gray-300 mb-6 text-lg leading-relaxed">
+                    Hi 👋 I'm <span class="font-semibold text-cyan-400">Yuvadarshini</span>, a curious soul who loves to explore 
+                    the blend of <span class="text-fuchsia-400">cybersecurity</span>, 
+                    <span class="text-yellow-400">development</span>, and a bit of 
+                    <span class="text-green-400">data wizardry</span>.  
+                    <br><br>
+                    I thrive on challenges 🧩 — whether it's breaking down complex problems, 
+                    building neat projects, or experimenting with tools to understand the "why" behind tech.  
+                    <br><br>
+                    Outside the keyboard ⌨️, I'm a team player who values learning, collaboration, 
+                    and a good dose of creativity 🎨 to keep things exciting.  
+                    <br><br>
+                    My journey is just getting started 🚀 — and I'm all about leveling up one step at a time.
+                </p>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="min-h-screen py-20 fade-in-section flex flex-col items-center">
+            <h2 class="text-5xl font-extrabold text-center neon-text-green-blue mb-12">EDUCATION</h2>
+            <div class="grid-even-height max-w-5xl w-full">
+                <!-- Master Diploma -->
+                <div class="bg-slate-800/50 p-8 rounded-2xl border-2 border-cyan-400 flex flex-col cert-card hover:scale-105 hover:shadow-lg">
+                    <h3 class="text-2xl font-bold neon-text-blue-pink mb-4">Master Diploma in Cybersecurity and Ethical Hacking</h3>
+                    <ul class="text-gray-300 space-y-4 text-lg flex-grow">
+                        <li><i class="fas fa-university text-cyan-400 mr-2"></i> Boston Institute of Analytics, Anna Nagar, Chennai</li>
+                        <li><i class="fas fa-calendar-alt text-yellow-400 mr-2"></i> Present</li>
+                        <li><i class="fas fa-cogs text-fuchsia-400 mr-2"></i> Currently Studying</li>
+                    </ul>
+                </div>
+                
+                <!-- B.Tech -->
+                <div class="bg-slate-800/50 p-8 rounded-2xl border-2 border-fuchsia-400 flex flex-col cert-card hover:scale-105 hover:shadow-lg">
+                    <h3 class="text-2xl font-bold neon-text-pink-orange mb-4">B.Tech in Artificial Intelligence & Data Science</h3>
+                    <ul class="text-gray-300 space-y-4 text-lg flex-grow">
+                        <li><i class="fas fa-graduation-cap text-cyan-400 mr-2"></i> Saveetha Engineering College, Chennai</li>
+                        <li><i class="fas fa-calendar-alt text-yellow-400 mr-2"></i> 2021 – 2025</li>
+                        <li><i class="fas fa-star text-fuchsia-400 mr-2"></i> Current CGPA: 7.6 / 10</li>
+                    </ul>
+                </div>
+
+                <!-- Schooling -->
+                <div class="bg-slate-800/50 p-8 rounded-2xl border-2 border-yellow-400 flex flex-col cert-card hover:scale-105 hover:shadow-lg">
+                    <h3 class="text-2xl font-bold neon-text-blue-pink mb-4">Schooling</h3>
+                    <ul class="text-gray-300 space-y-4 text-lg flex-grow">
+                        <li><i class="fas fa-school text-cyan-400 mr-2"></i> Vivekananda Vidyalaya Matric. Hr. Sec. School, Chennai</li>
+                        <li><i class="fas fa-graduation-cap text-fuchsia-400 mr-2"></i> Higher Secondary – 92.58%</li>
+                        <li><i class="fas fa-graduation-cap text-yellow-400 mr-2"></i> SSLC – 93%</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="min-h-screen py-20 fade-in-section flex flex-col items-center">
+            <h2 class="text-5xl font-extrabold neon-text-green-blue mb-12 text-center">SKILLS</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-6xl">
+                <!-- Technical Skills -->
+                <div class="bg-slate-800/50 p-8 rounded-xl border-2 border-cyan-400 shadow-lg skill-box">
+                    <h3 class="text-2xl font-bold neon-text-blue-pink mb-4 flex items-center gap-2">
+                        <i class="fas fa-laptop-code text-cyan-400"></i> Technical Skills
+                    </h3>
+                    <ul class="space-y-3 text-left">
+                        <li class="hover-glow"><i class="fas fa-code text-cyan-300"></i> Languages: C, Java</li>
+                        <li class="hover-glow"><i class="fas fa-tools text-cyan-300"></i> Tools: GitHub, VS Code, Android Studio, Fusion 360</li>
+                        <li class="hover-glow"><i class="fas fa-bug text-cyan-300"></i> Cybersecurity: Wireshark, Burp Suite, Kali Linux</li>
+                        <li class="hover-glow"><i class="fas fa-network-wired text-cyan-300"></i> Networking: Cisco Packet Tracer, IPSec Tunneling</li>
+                        <li class="hover-glow"><i class="fas fa-server text-cyan-300"></i> Cloud: AWS, Azure</li>
+                        <li class="hover-glow"><i class="fas fa-user-secret text-cyan-300"></i> Ethical Hacking: WPA/WPA2 cracking, SYN Flood (Scapy)</li>
+                    </ul>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="bg-slate-800/50 p-8 rounded-xl border-2 border-fuchsia-400 shadow-lg skill-box">
+                    <h3 class="text-2xl font-bold neon-text-pink-orange mb-4 flex items-center gap-2">
+                        <i class="fas fa-users text-pink-400"></i> Soft Skills
+                    </h3>
+                    <ul class="space-y-3 text-left">
+                        <li class="hover-glow"><i class="fas fa-lightbulb text-pink-300"></i> Problem Solving</li>
+                        <li class="hover-glow"><i class="fas fa-clock text-pink-300"></i> Time Management</li>
+                        <li class="hover-glow"><i class="fas fa-brain text-pink-300"></i> Critical Thinking</li>
+                        <li class="hover-glow"><i class="fas fa-sync-alt text-pink-300"></i> Adaptability</li>
+                        <li class="hover-glow"><i class="fas fa-handshake text-pink-300"></i> Teamwork</li>
+                        <li class="hover-glow"><i class="fas fa-eye text-pink-300"></i> Attention to Detail</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="min-h-screen py-20 fade-in-section flex flex-col items-center">
+            <h2 class="text-5xl font-extrabold text-center neon-text-pink-orange mb-12">CERTIFICATIONS</h2>
+            <div class="grid-even-height max-w-6xl w-full">
+                <!-- Cert 1 -->
+                <div class="cert-card neon-gradient-1 bg-slate-800/50 p-4 rounded-xl border-2 hover:scale-105 hover:shadow-lg text-left flex flex-col">
+                    <h3 class="text-xl font-bold mb-2">Google IT Support Professional Certificate</h3>
+                    <p class="text-gray-400 flex-grow">Comprehensive IT support certification from Google via Coursera.</p>
+                </div>
+
+                <!-- Cert 2 -->
+                <div class="cert-card neon-gradient-2 bg-slate-800/50 p-4 rounded-xl border-2 hover:scale-105 hover:shadow-lg text-left flex flex-col">
+                    <h3 class="text-xl font-bold mb-2">Java Certified Foundation Associate</h3>
+                    <p class="text-gray-400 flex-grow">Java programming certification from Infosys Springboard.</p>
+                </div>
+
+                <!-- Cert 3 -->
+                <div class="cert-card neon-gradient-3 bg-slate-800/50 p-4 rounded-xl border-2 hover:scale-105 hover:shadow-lg text-left flex flex-col">
+                    <h3 class="text-xl font-bold mb-2">Machine Learning with Python</h3>
+                    <p class="text-gray-400 flex-grow">Advanced machine learning concepts and implementation via Udemy.</p>
+                </div>
+
+                <!-- Cert 4 -->
+                <div class="cert-card neon-gradient-4 bg-slate-800/50 p-4 rounded-xl border-2 hover:scale-105 hover:shadow-lg text-left flex flex-col">
+                    <h3 class="text-xl font-bold mb-2">Cybersecurity for Everyone</h3>
+                    <p class="text-gray-400 flex-grow">Foundational cybersecurity principles and practices from Coursera.</p>
+                </div>
+
+                <!-- Cert 5 -->
+                <div class="cert-card neon-gradient-5 bg-slate-800/50 p-4 rounded-xl border-2 hover:scale-105 hover:shadow-lg text-left flex flex-col">
+                    <h3 class="text-xl font-bold mb-2">AWS Cloud Practitioner</h3>
+                    <p class="text-gray-400 flex-grow">AWS foundational certification with cloud concepts, security, and billing knowledge.</p>
+                </div>
+
+                <!-- Cert 6 -->
+                <div class="cert-card neon-gradient-6 bg-slate-800/50 p-4 rounded-xl border-2 hover:scale-105 hover:shadow-lg text-left flex flex-col">
+                    <h3 class="text-xl font-bold mb-2">TryHackMe: Cybersecurity Path</h3>
+                    <p class="text-gray-400 flex-grow">Completed hands-on labs in networking, web exploitation, and cryptography.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Internships Section -->
+        <section id="internships" class="min-h-screen py-20 fade-in-section flex flex-col items-center">
+            <h2 class="text-5xl font-extrabold text-center neon-text-pink-orange mb-12">INTERNSHIPS & TRAINING</h2>
+            <div class="grid-even-height max-w-3xl w-full">
+                <div class="internship-card neon-gradient-6 bg-slate-800/50 p-6 rounded-xl border-2 hover:scale-105 hover:shadow-lg">
+                    <h3 class="text-xl font-bold mb-2">Intern @ Axis Global Automation</h3>
+                    <p class="text-gray-400 mb-4">Learned about fundamental concepts of Industrial Robotics and Automation and also had a practical session.</p>
+                </div>
+                <div class="internship-card neon-gradient-7 bg-slate-800/50 p-6 rounded-xl border-2 hover:scale-105 hover:shadow-lg">
+                    <h3 class="text-xl font-bold mb-2">Inplant training @ Zybeak Technologies</h3>
+                    <p class="text-gray-400 mb-4">15 days training on Ethical Hacking basics, had practice sessions and cleared a CTF session.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="min-h-screen py-20 fade-in-section flex flex-col items-center">
+            <h2 class="text-5xl font-extrabold text-center neon-text-pink-orange mb-12">PROJECTS</h2>
+            <div class="grid-even-height w-full">
+                <div class="flip-card floating">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front neon-gradient-8 bg-slate-800/50 border-2">
+                            <i class="fas fa-robot text-6xl text-cyan-400 mb-4"></i>
+                            <h3 class="text-2xl font-bold mb-2">AI Mock Interview Platform</h3>
+                        </div>
+                        <div class="flip-card-back neon-gradient-8 bg-slate-800/50 border-2">
+                            <p class="text-gray-300 mb-4">An AI-driven platform for mock interviews with dynamic question generation and real-time feedback.</p>
+                            <a href="https://github.com/Yuvadarshini-Sathiyamoorthy/The-Future-Of-Interview-Prep.git" target="_blank" class="px-4 py-2 rounded-full border border-cyan-400 text-cyan-400 transition-all duration-300 hover:bg-cyan-400/20">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card floating">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front neon-gradient-9 bg-slate-800/50 border-2">
+                            <i class="fas fa-language text-6xl text-fuchsia-400 mb-4"></i>
+                            <h3 class="text-2xl font-bold mb-2">Tamil Article Sentiment Analysis</h3>
+                        </div>
+                        <div class="flip-card-back neon-gradient-9 bg-slate-800/50 border-2">
+                            <p class="text-gray-300 mb-4">A BERT-powered platform for real-time Tamil sentiment classification.</p>
+                            <a href="https://github.com/Yuvadarshini-Sathiyamoorthy/TAMIL-ARTICLE-SENTIMENT-ANALYSIS-LEVERAGING-BERT-FOR-ACCURACY.git" target="_blank" class="px-4 py-2 rounded-full border border-fuchsia-400 text-fuchsia-400 transition-all duration-300 hover:bg-fuchsia-400/20">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Articles Section -->
+        <section id="articles" class="min-h-screen py-20 fade-in-section flex flex-col items-center">
+            <h2 class="text-5xl font-extrabold text-center neon-text-blue-pink mb-12">ARTICLES WRITTEN</h2>
+            <div class="grid-even-height max-w-6xl w-full">
+                <div class="flip-card floating">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front neon-gradient-11 bg-slate-800/50 border-2">
+                            <i class="fas fa-wifi text-6xl text-fuchsia-400 mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">Wi-Fi Under Siege</h3>
+                            <p class="text-gray-400">Ethical Cracking of WPA2 Networks</p>
+                        </div>
+                        <div class="flip-card-back neon-gradient-11 bg-slate-800/50 border-2">
+                            <p class="text-gray-300 mb-4">Details the process of WPA/WPA2 password cracking using John the Ripper.</p>
+                            <a href="https://medium.com/@mickeyoswald2003/wi-fi-under-siege-ethical-cracking-of-wpa2-networks-8b8b68b9bced" target="_blank" class="px-4 py-2 rounded-full border border-fuchsia-400 text-fuchsia-400 transition-all duration-300 hover:bg-fuchsia-500/20">Read Article</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flip-card floating">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front neon-gradient-12 bg-slate-800/50 border-2">
+                            <i class="fas fa-shield-alt text-6xl text-yellow-400 mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">Data Protection Standards</h3>
+                            <p class="text-gray-400">Cybersecurity Compliance</p>
+                        </div>
+                        <div class="flip-card-back neon-gradient-12 bg-slate-800/50 border-2">
+                            <p class="text-gray-300 mb-4">Explains key security standards with real-world cases.</p>
+                            <a href="https://medium.com/@mickeyoswald2003/how-the-world-protects-your-data-a-look-into-cybersecurity-compliance-standards-529c33e27855" target="_blank" class="px-4 py-2 rounded-full border border-yellow-400 text-yellow-400 transition-all duration-300 hover:bg-yellow-500/20">Read Article</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="min-h-screen py-20 fade-in-section flex flex-col items-center justify-center text-center">
+            <h2 class="text-5xl font-extrabold neon-text-pink-orange mb-6">CONNECT WITH ME</h2>
+            
+            <!-- Quick Note -->
+            <p class="text-lg text-gray-300 mb-10 max-w-2xl">
+                🚀 If you're interested, <span class="text-cyan-400 font-semibold">look out for me</span> —  
+                always ready for fun projects and formal opportunities!
+            </p>
+
+            <div class="bg-slate-800/50 p-8 rounded-2xl max-w-lg w-full border-2 border-cyan-400 shadow-lg">
+                <form id="contactForm">
+                    <div class="mb-4">
+                        <input type="text" name="name" placeholder="Your Name" required
+                            class="w-full p-3 rounded-lg bg-gray-900 border border-gray-700 text-white placeholder-gray-500 
+                                   focus:outline-none focus:border-cyan-400 transition-all duration-300" />
+                    </div>
+                    <div class="mb-4">
+                        <input type="email" name="email" placeholder="Your Email" required
+                            class="w-full p-3 rounded-lg bg-gray-900 border border-gray-700 text-white placeholder-gray-500 
+                                   focus:outline-none focus:border-cyan-400 transition-all duration-300" />
+                    </div>
+                    <div class="mb-4">
+                        <textarea name="message" placeholder="Your Message" required rows="5"
+                            class="w-full p-3 rounded-lg bg-gray-900 border border-gray-700 text-white placeholder-gray-500 
+                                   focus:outline-none focus:border-cyan-400 transition-all duration-300"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-fuchsia-500 text-white font-bold text-lg uppercase 
+                               transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50">
+                        Send Message
+                    </button>
+                </form>
+                
+                <!-- Notification -->
+                <div id="notification" class="hidden fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50">
+                    <i class="fas fa-check-circle mr-2"></i>
+                    <span id="notificationText">Form submitted successfully!</span>
+                </div>
+
+                <!-- Download Resume Button -->
+                <a href="res_yuva.pdf" download
+                    class="download-btn mt-6 inline-block w-full py-4 rounded-xl font-bold text-lg uppercase transition-all duration-500 relative overflow-hidden group">
+                    <span class="download-text relative z-10 flex items-center justify-center gap-2">
+                        <i class="fas fa-download"></i>
+                        Download Resume
+                    </span>
+                </a>
+            </div>
+
+            <!-- Social Media Icons -->
+            <div class="flex justify-center items-center space-x-6 mt-10">
+                <a href="https://linkedin.com/in/yuvadarshini-sathiyamoorthy" target="_blank" rel="noopener" 
+                   aria-label="LinkedIn" class="transition-all duration-300 hover:scale-125">
+                    <i class="fab fa-linkedin-in text-4xl text-cyan-400 hover:text-cyan-600"></i>
+                </a>
+                <a href="https://github.com/Yuvadarshini-Sathiyamoorthy" target="_blank" rel="noopener" 
+                   aria-label="GitHub" class="transition-all duration-300 hover:scale-125">
+                    <i class="fab fa-github text-4xl text-cyan-400 hover:text-cyan-600"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

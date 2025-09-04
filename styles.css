@@ -1,0 +1,597 @@
+/* === General Styles === */
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0d0c2e;
+  color: #ffffff;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  cursor: none;
+}
+* {
+  cursor: none !important;
+}
+
+/* === Custom Cursor === */
+.custom-cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease;
+  font-size: 20px;
+  color: #00ffff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+.custom-cursor.hover {
+  transform: scale(1.3);
+  color: #ff00ff;
+  text-shadow: 0 0 15px rgba(255, 0, 255, 0.8);
+}
+
+/* === Scroll Navigation === */
+.scroll-nav {
+  position: fixed;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.scroll-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(0, 255, 255, 0.1);
+  border: 2px solid #00ffff;
+  color: #00ffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: none;
+  transition: all 0.3s ease;
+  font-size: 20px;
+}
+.scroll-btn:hover {
+  background: rgba(0, 255, 255, 0.3);
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+/* === Typography === */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+p, li, span, a, button, input, textarea {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+/* === Name Styling === */
+.name-title {
+  font-family: 'Georgia', serif;
+  background: linear-gradient(45deg, #ffff00, #ff69b4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+  font-weight: 600;
+}
+main { min-height: 100vh; }
+
+/* === Neon Text Effects (for static h2 headings like About, Skills, etc.) === */
+.neon-text-main {
+  background: linear-gradient(45deg, #00ffff, #ff00ff, #ff8000);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(128, 0, 255, 0.9);
+}
+.neon-text-blue-pink {
+  background: linear-gradient(45deg, #00ffff, #0080ff, #ff00ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(0, 128, 255, 0.9);
+}
+.neon-text-pink-orange {
+  background: linear-gradient(45deg, #ff00ff, #ff8000, #ffff00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(255, 0, 255, 0.9);
+}
+.neon-text-green-blue {
+  background: linear-gradient(45deg, #00ff00, #00ffff, #0080ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(0, 255, 0, 0.9);
+}
+
+/* === Section Fade-in === */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.neon-card, .skill-box {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+.neon-card.show, .skill-box.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === Floating Animation === */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* === Buttons === */
+.nav-link:focus {
+  outline: 3px solid #0ff;
+  outline-offset: 2px;
+}
+.hover-bg-gradient {
+  transition: all 0.3s ease;
+  position: relative;
+}
+.hover-bg-gradient:hover {
+  background: linear-gradient(45deg, #00ffff, #ff00ff, #ff8000);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hover-bg-gradient:hover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, #00ffff, #ff00ff, #ff8000);
+  border-radius: 9999px;
+  z-index: -1;
+  opacity: 0.1;
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+/* === Grid Helpers === */
+.grid-even-height {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  grid-auto-rows: 1fr;
+  justify-content: center;
+}
+.centered-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+/* === Neon Gradient Cards === */
+.neon-gradient-1 {
+  border-color: #00ffff;
+  box-shadow: none;
+}
+.neon-gradient-1:hover {
+  box-shadow: none;
+}
+/* Professional Certifications - Blue/Corporate */
+.neon-gradient-1 h3 {
+  background: linear-gradient(45deg, #0066ff, #00ccff, #66b3ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(0, 102, 255, 0.9);
+}
+
+/* AWS Cloud - Orange/AWS Colors */
+.neon-gradient-2 h3 {
+  background: linear-gradient(45deg, #ff9900, #ffcc00, #ff6600);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(255, 153, 0, 0.9);
+}
+
+/* TryHackMe - Green/Hacker */
+.neon-gradient-3 h3 {
+  background: linear-gradient(45deg, #00ff41, #39ff14, #00cc33);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(0, 255, 65, 0.9);
+}
+
+/* Python - Yellow/Gold */
+.neon-gradient-4 h3 {
+  background: linear-gradient(45deg, #ffd700, #ffff00, #ffcc00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.9);
+}
+
+/* Networking - Purple/Tech */
+.neon-gradient-5 h3 {
+  background: linear-gradient(45deg, #8a2be2, #9966ff, #cc99ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(138, 43, 226, 0.9);
+}
+
+/* Robotics/Automation - Light Blue/Tech */
+.neon-gradient-6 h3 {
+  background: linear-gradient(45deg, #87ceeb, #add8e6, #b0e0e6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(135, 206, 235, 0.9);
+}
+
+/* Ethical Hacking - Light Red/Security */
+.neon-gradient-7 h3 {
+  background: linear-gradient(45deg, #ff6b6b, #ff8e8e, #ffb3b3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(255, 107, 107, 0.9);
+}
+
+/* AI Mock Interview - Bright Cyan/AI */
+.neon-gradient-8 h3 {
+  background: linear-gradient(45deg, #40e0d0, #7fffd4, #afeeee);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(64, 224, 208, 0.9);
+}
+
+/* Tamil Sentiment Analysis - Light Pink/Language */
+.neon-gradient-9 h3 {
+  background: linear-gradient(45deg, #ff69b4, #ffb6c1, #ffc0cb);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(255, 105, 180, 0.9);
+}
+
+/* Recon Report - Light Green/Security */
+.neon-gradient-10 h3 {
+  background: linear-gradient(45deg, #90ee90, #98fb98, #adff2f);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(144, 238, 144, 0.9);
+}
+
+/* Password Cracking - Light Coral/Security */
+.neon-gradient-11 h3 {
+  background: linear-gradient(45deg, #f08080, #fa8072, #ff7f7f);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(240, 128, 128, 0.9);
+}
+
+/* InfoSec Compliance - Blue/Corporate Security */
+.neon-gradient-12 h3 {
+  background: linear-gradient(45deg, #4169e1, #6495ed, #87ceeb);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(65, 105, 225, 0.9);
+}
+
+/* Base card styling */
+.cert-card, .project-card, .internship-card, .article-card {
+  transition: all 0.4s ease;
+}
+.cert-card:hover, .project-card:hover, .internship-card:hover, .article-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Themed borders for gradient cards */
+.neon-gradient-1 { border-color: #66b3ff; }
+.neon-gradient-2 { border-color: #ffcc66; }
+.neon-gradient-3 { border-color: #66ff99; }
+.neon-gradient-4 { border-color: #ffeb99; }
+.neon-gradient-5 { border-color: #cc99ff; }
+.neon-gradient-6 { border-color: #add8e6; }
+.neon-gradient-7 { border-color: #ff9999; }
+.neon-gradient-8 { border-color: #7fffd4; }
+.neon-gradient-9 { border-color: #ffb6c1; }
+.neon-gradient-10 { border-color: #98fb98; }
+.neon-gradient-11 { border-color: #f08080; }
+.neon-gradient-12 { border-color: #87ceeb; }
+
+/* === Unique Download Button === */
+.download-btn {
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
+  background-size: 300% 300%;
+  border: 2px solid transparent;
+  animation: gradientShift 3s ease infinite;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.download-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
+  background-size: 300% 300%;
+  border-radius: 0.75rem;
+  z-index: -1;
+  animation: gradientShift 3s ease infinite;
+  filter: blur(4px);
+  opacity: 0.7;
+}
+
+.download-text {
+  background: linear-gradient(45deg, #ffffff, #f8f9fa, #ffffff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.download-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  animation-duration: 1.5s;
+}
+
+.download-btn:hover::before {
+  animation-duration: 1.5s;
+  filter: blur(6px);
+  opacity: 1;
+}
+
+.download-btn:hover .download-text {
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* === Hero Button Unique Gradients === */
+.hero-btn {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 9999px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: -1;
+}
+
+.hero-btn:hover::before {
+  opacity: 1;
+}
+
+.hero-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* About - Blue Gradient */
+.hero-btn-1 {
+  border-color: #66b3ff;
+  color: #66b3ff;
+}
+.hero-btn-1::before {
+  background: linear-gradient(45deg, #0066ff, #66b3ff, #99ccff);
+}
+.hero-btn-1:hover {
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Education - Orange Gradient */
+.hero-btn-2 {
+  border-color: #ffcc66;
+  color: #ffcc66;
+}
+.hero-btn-2::before {
+  background: linear-gradient(45deg, #ff9900, #ffcc66, #ffe066);
+}
+.hero-btn-2:hover {
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Skills - Green Gradient */
+.hero-btn-3 {
+  border-color: #66ff99;
+  color: #66ff99;
+}
+.hero-btn-3::before {
+  background: linear-gradient(45deg, #00ff41, #66ff99, #99ffcc);
+}
+.hero-btn-3:hover {
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Certifications - Gold Gradient */
+.hero-btn-4 {
+  border-color: #ffeb99;
+  color: #ffeb99;
+}
+.hero-btn-4::before {
+  background: linear-gradient(45deg, #ffd700, #ffeb99, #fff2cc);
+}
+.hero-btn-4:hover {
+  color: #333;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Internships - Purple Gradient */
+.hero-btn-5 {
+  border-color: #cc99ff;
+  color: #cc99ff;
+}
+.hero-btn-5::before {
+  background: linear-gradient(45deg, #8a2be2, #cc99ff, #e6ccff);
+}
+.hero-btn-5:hover {
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Projects - Teal Gradient */
+.hero-btn-6 {
+  border-color: #7fffd4;
+  color: #7fffd4;
+}
+.hero-btn-6::before {
+  background: linear-gradient(45deg, #40e0d0, #7fffd4, #b3ffe6);
+}
+.hero-btn-6:hover {
+  color: #333;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Articles - Pink Gradient */
+.hero-btn-7 {
+  border-color: #ffb6c1;
+  color: #ffb6c1;
+}
+.hero-btn-7::before {
+  background: linear-gradient(45deg, #ff69b4, #ffb6c1, #ffd9e6);
+}
+.hero-btn-7:hover {
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Contact - Light Green Gradient */
+.hero-btn-8 {
+  border-color: #98fb98;
+  color: #98fb98;
+}
+.hero-btn-8::before {
+  background: linear-gradient(45deg, #90ee90, #98fb98, #ccffcc);
+}
+.hero-btn-8:hover {
+  color: #333;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* === Skills Section === */
+.skill-box {
+  transition: all 0.3s ease;
+}
+.skill-box:hover {
+  transform: translateY(-4px);
+}
+.hover-glow {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+.hover-glow:hover {
+  color: #fff;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.7);
+}
+
+/* === About and Education Hover Effects === */
+.hover\:scale-105:hover {
+  transform: scale(1.05);
+}
+.hover\:shadow-lg:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.transition-all {
+  transition-property: all;
+}
+.duration-300 {
+  transition-duration: 300ms;
+}
+
+/* === Section Headings (h2) === */
+h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
+
+/* Reset h3 outside cards */
+h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
+/* === Section alignment === */
+#about,
+#skills,
+#education_certs,
+#articles,
+#contact,
+#internships {
+  text-align: center;
+}
+.text-left { text-align: left; }
+
+/* === Flip Card Animation === */
+.flip-card {
+  perspective: 1000px;
+  height: 300px;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+}
+.flip-card-back {
+  transform: rotateY(180deg);
+}
